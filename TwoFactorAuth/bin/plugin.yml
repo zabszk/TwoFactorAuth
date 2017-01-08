@@ -1,0 +1,11 @@
+name: TwoFactorAuth
+main: net.zabszk.TFA.Main
+version: 1.0
+author: zabszk
+load: STARTUP 
+
+commands:
+   tfa:
+      description: Main command
+      usage: /tfa
+      aliases: [twofactor, 2fa]
