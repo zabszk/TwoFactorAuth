@@ -87,6 +87,9 @@ public class Main extends JavaPlugin
 			e.printStackTrace();
 		}
 		
+		GenerateLang.GenerateLang("en");
+		GenerateLang.GenerateLang("pl");
+		
 		langfile = new File("plugins/TwoFactorAuth/lang/" + config.getString("Lang") + ".yml");
 		langconf = YamlConfiguration.loadConfiguration(langfile);
 		
