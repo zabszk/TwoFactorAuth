@@ -155,7 +155,7 @@ public class Main extends JavaPlugin
 						if (sender.isOp() || sender.hasPermission("tfa.reload")) sender.sendMessage(ChatColor.GOLD + "/tfa reload");
 						
 						sender.sendMessage("");
-						sender.sendMessage(ChatColor.DARK_AQUA + "TwoFactorAuth, ver. 1.0");
+						sender.sendMessage(ChatColor.DARK_AQUA + "TwoFactorAuth, ver. 1.2");
 					}
 				}
 				else if (args.length == 1 && IsUnAuthenticated((Player) sender, false))

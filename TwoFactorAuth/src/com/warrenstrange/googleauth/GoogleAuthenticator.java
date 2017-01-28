@@ -30,14 +30,14 @@
 
 package com.warrenstrange.googleauth;
 
-//import org.apache.commons.codec.binary.Base32;
+import java.util.Base64;
+
 //import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base32;
-import org.apache.commons.codec.binary.Base64;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -345,8 +345,7 @@ public final class GoogleAuthenticator implements IGoogleAuthenticator
                 Base32 codec32 = new Base32();
                 return codec32.decode(secret);
             case BASE64:
-                Base64 codec64 = new Base64();
-                return codec64.decode(secret);
+                return Base64.getDecoder().decode(secret);
             default:
                 throw new IllegalArgumentException("Unknown key representation type.");
         }
@@ -543,7 +542,7 @@ public final class GoogleAuthenticator implements IGoogleAuthenticator
             case BASE32:
                 return new Base32().encodeToString(secretKey);
             case BASE64:
-                return new Base64().encodeToString(secretKey);
+                return Base64.getEncoder().encodeToString(secretKey);
             default:
                 throw new IllegalArgumentException("Unknown key representation type.");
         }
